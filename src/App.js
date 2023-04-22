@@ -5,13 +5,20 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-import "./App.css";
+
+//components
 import MainNavigation from "./components/navigation/main-navigation";
+import "./App.css";
 
 //imported pages
-import MainPage from "./pages/main-page";
+import EntryPage from "./pages/entry-page/entry-page";
+// insert this later: <MainNavigation />
 
 export default function App() {
+  //start screen:
+  //small showcase on left/slogan/logo
+  //login section on right
+
   //every user will need:
   //user id
   //name
@@ -20,17 +27,19 @@ export default function App() {
   //all posts/photos/comments must be 'likeable'
 
   return (
-    <Router>
-      <MainNavigation />
-      <main>
-        <Switch>
-          <Route path="/">
-            <MainPage />
-          </Route>
-          {/* non logged-in users should be brought straight here */}
-          <Redirect to="/" />
-        </Switch>
-      </main>
-    </Router>
+    <div className="app-container">
+      <Router>
+        <main>
+          <Switch>
+            <Route path="/">
+              {/* all users, regardless of login status, should be brought here */}
+              <EntryPage />
+            </Route>
+            {/* redirects to entry screen */}
+            <Redirect to="/" />
+          </Switch>
+        </main>
+      </Router>
+    </div>
   );
 }
