@@ -1,6 +1,15 @@
 import React from "react";
+import { useState } from "react";
+
+//imported images
+import emailIcon from "../../assets/images/entry-page-right-section-email-icon.png";
+import passwordIcon from "../../assets/images/entry-page-right-section-password-icon.png";
+import showPasswordIcon from "../../assets/images/entry-page-right-section-show-password-icon.png";
 
 export default function SectionRight() {
+  //held states
+  const [passwordShowStatus, setPasswordShowStatus] = useState(false);
+
   //gets current date for entry page
   const weekday = [
     "Sunday",
@@ -38,6 +47,8 @@ export default function SectionRight() {
   let displayGreetingsPartTwo =
     greetingsTwo[Math.floor(Math.random() * greetingsTwo.length)];
 
+  //password logics
+
   //submit logic
   const submitHandler = (event) => {
     event.preventDefault();
@@ -55,7 +66,7 @@ export default function SectionRight() {
         <h2>Don't have an account?</h2>
         <button>Sign Up</button>
       </div>
-      {/* divider */}
+      {/* right section halfway divider */}
       <hr class="rounded" />
       {/* existing member sign in */}
       <div className="right-section-sign-in-container">
@@ -64,18 +75,28 @@ export default function SectionRight() {
             submitHandler(event);
           }}
         >
-          <label for="email" />
-          <input
-            className="sign-in-input"
-            name="email"
-            placeholder="Email"
-          ></input>
-          <label for="password" />
-          <input
-            className="sign-in-input"
-            name="password"
-            placeholder="Password"
-          ></input>
+          {/* email container */}
+          <div className="sign-in-email-container">
+            <img alt="email-icon" src={emailIcon}></img>
+            <label for="email" />
+            <input
+              className="sign-in-input"
+              name="email"
+              placeholder="Email"
+            ></input>
+          </div>
+          {/* password container */}
+          <div className="sign-in-password-container">
+            <img alt="password-icon" src={passwordIcon}></img>
+            <label for="password" />
+            <input
+              className="sign-in-input"
+              name="password"
+              placeholder="Password"
+              onChange={(event) => {}}
+            ></input>
+            <img alt="show password icon" src={showPasswordIcon}></img>
+          </div>
         </form>
       </div>
     </div>
