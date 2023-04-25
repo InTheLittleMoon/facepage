@@ -4,11 +4,16 @@ import { useState } from "react";
 //imported images
 import emailIcon from "../../assets/images/entry-page-right-section-email-icon.png";
 import passwordIcon from "../../assets/images/entry-page-right-section-password-icon.png";
-import showPasswordIcon from "../../assets/images/entry-page-right-section-show-password-icon.png";
+
+//for password logics
+import Icon from "react-icons-kit";
+import { eye } from "react-icons-kit/feather/eye";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
 
 export default function SectionRight() {
   //held states
-  const [passwordShowStatus, setPasswordShowStatus] = useState(false);
+  const [passwordShowStatus, setPasswordShowStatus] = useState("password");
+  const [passwordIconStatus, setPasswordIconStatus] = useState(eyeOff);
 
   //gets current date for entry page
   const weekday = [
@@ -48,6 +53,27 @@ export default function SectionRight() {
     greetingsTwo[Math.floor(Math.random() * greetingsTwo.length)];
 
   //password logics
+  const passwordInputHandler = () => {
+    if (passwordIconStatus === eyeOff) {
+      setPasswordIconStatus((prevState) => {
+        let newState = eye;
+        return newState;
+      });
+      setPasswordShowStatus((prevState) => {
+        let newState = "text";
+        return newState;
+      });
+    } else {
+      setPasswordIconStatus((prevState) => {
+        let newState = eyeOff;
+        return newState;
+      });
+      setPasswordShowStatus((prevState) => {
+        let newState = "password";
+        return newState;
+      });
+    }
+  };
 
   //submit logic
   const submitHandler = (event) => {
@@ -72,6 +98,7 @@ export default function SectionRight() {
       <div className="right-section-sign-in-container">
         <form
           onSubmit={(event) => {
+            event.preventDefault();
             submitHandler(event);
           }}
         >
@@ -93,9 +120,11 @@ export default function SectionRight() {
               className="sign-in-input"
               name="password"
               placeholder="Password"
-              onChange={(event) => {}}
+              type={passwordShowStatus}
             ></input>
-            <img alt="show password icon" src={showPasswordIcon}></img>
+            <span onClick={passwordInputHandler}>
+              <Icon icon={passwordIconStatus} />
+            </span>
           </div>
         </form>
       </div>
