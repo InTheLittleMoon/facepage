@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 //imported images
 import emailIcon from "../../assets/images/entry-page-right-section-email-icon.png";
@@ -78,6 +78,7 @@ export default function SectionRight() {
   //submit logic
   const submitHandler = (event) => {
     event.preventDefault();
+    console.log(event);
   };
 
   return (
@@ -96,6 +97,7 @@ export default function SectionRight() {
       <hr class="rounded" />
       {/* existing member sign in */}
       <div className="right-section-sign-in-container">
+        <h3>Already a member? Welcome back!</h3>
         <form
           onSubmit={(event) => {
             event.preventDefault();
@@ -107,6 +109,7 @@ export default function SectionRight() {
             <img alt="email-icon" src={emailIcon}></img>
             <label for="email" />
             <input
+              required
               className="sign-in-input"
               name="email"
               placeholder="Email"
@@ -117,16 +120,25 @@ export default function SectionRight() {
             <img alt="password-icon" src={passwordIcon}></img>
             <label for="password" />
             <input
+              required
               className="sign-in-input"
               name="password"
               placeholder="Password"
               type={passwordShowStatus}
             ></input>
-            <span onClick={passwordInputHandler}>
+            <span
+              onClick={(event) => {
+                event.preventDefault();
+                passwordInputHandler();
+              }}
+            >
               <Icon icon={passwordIconStatus} />
             </span>
           </div>
+          <button type="submit">Sign In</button>
         </form>
+        {/* forgot log in */}
+        <Link to="/">Forgot Username/Password?</Link>
       </div>
     </div>
   );

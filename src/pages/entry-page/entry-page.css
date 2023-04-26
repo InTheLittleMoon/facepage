@@ -81,6 +81,10 @@ hr.rounded {
   align-items: center;
 }
 
+.right-section-sign-in-container h3 {
+  margin: 5vh auto 2vh;
+}
+
 .right-section-sign-in-container img {
   height: 2vh;
 }
