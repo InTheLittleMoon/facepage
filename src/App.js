@@ -7,14 +7,16 @@ import {
 } from "react-router-dom";
 
 //components
-import MainNavigation from "./components/navigation/main-navigation";
+//import MainNavigation from "./components/navigation/main-navigation";
 import "./App.css";
 
 //imported pages
 import EntryPage from "./pages/entry-page/entry-page";
+import UserProfilePage from "./pages/user-profile-page/user-profile-page";
 // insert this later: <MainNavigation />
 
 export default function App() {
+  //GOALS:
   //start screen:
   //small showcase on left/slogan/logo
   //login section on right
@@ -31,12 +33,15 @@ export default function App() {
       <Router>
         <main>
           <Switch>
-            <Route path="/">
+            <Route path="/login">
               {/* all users, regardless of login status, should be brought here */}
               <EntryPage />
             </Route>
+            <Route path="/user/:uID">
+              <UserProfilePage />
+            </Route>
             {/* redirects to entry screen */}
-            <Redirect to="/" />
+            <Redirect to="/login" />
           </Switch>
         </main>
       </Router>
