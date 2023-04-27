@@ -1,0 +1,121 @@
+.entry-page_right-section-container {
+  width: 50%;
+  background-color: #f5f5f5;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* upper section */
+.right-section-welcome-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+.right-section-welcome-container h1 {
+  margin: 2vh;
+  text-align: center;
+}
+.right-section-welcome-container h2 {
+  margin: 2vh;
+  text-align: center;
+}
+
+.sign-up-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.sign-up-button {
+  background-color: #080707;
+  color: #f5f5f5;
+  height: 5vh;
+  width: 15vw;
+  border-radius: 24px;
+}
+
+.sign-up-button:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+
+/* section divider */
+hr.rounded {
+  border-top: 5px solid #080707;
+  border-radius: 5px;
+  width: 90%;
+  align-self: center;
+}
+
+/* lower section */
+.right-section-sign-in-container {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-section-sign-in-container h3 {
+  margin: 5vh auto 2vh;
+}
+
+.right-section-sign-in-container img {
+  height: 2vh;
+}
+
+.right-section-sign-in-container a {
+  margin-top: 1vh;
+  font-size: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-input {
+  height: 5vh;
+  padding: 0vh 1vh;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+}
+
+.sign-in-email-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #080707;
+}
+
+.sign-in-password-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #080707;
+  margin-bottom: 2vh;
+}
+
+.sign-in-password-container span {
+  cursor: pointer;
+  height: 2vh;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: #080707;
+  color: #f5f5f5;
+  height: 5vh;
+  width: 15vw;
+  border-radius: 24px;
+}
+
+.submit-button:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}

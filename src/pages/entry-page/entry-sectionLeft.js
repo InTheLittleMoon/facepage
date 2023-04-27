@@ -1,4 +1,5 @@
 import React from "react";
+import "./entry-sectionLeft.css";
 
 //imported images
 import fpLogo from "../../assets/images/entry-page_left-section-top-dummyLogo.jpg";

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./entry-sectionRight.css";
 import { Link } from "react-router-dom";
 
 //imported images
@@ -85,13 +86,14 @@ export default function SectionRight() {
     <div className="entry-page_right-section-container">
       <div className="right-section-welcome-container">
         {/* welcome / non member sign up link */}
-        <h1>Facepage</h1>
         <h1>
           Welcome! {displayGreetingsPartOne} {currentDay}{" "}
           {displayGreetingsPartTwo}
         </h1>
         <h2>Don't have an account?</h2>
-        <button>Sign Up</button>
+        <div className="sign-up-button-container">
+          <button className="sign-up-button">Sign Up</button>
+        </div>
       </div>
       {/* right section halfway divider */}
       <hr class="rounded" />
@@ -135,7 +137,11 @@ export default function SectionRight() {
               <Icon icon={passwordIconStatus} />
             </span>
           </div>
-          <button type="submit">Sign In</button>
+          <div className="submit-button-container">
+            <button className="submit-button" type="submit">
+              Sign In
+            </button>
+          </div>
         </form>
         {/* forgot log in */}
         <Link to="/">Forgot Username/Password?</Link>
