@@ -41,7 +41,7 @@ export default function App() {
               <UserProfilePage />
             </Route>
             {/* redirects to entry screen */}
-            <Redirect to="/login" />
+            <Redirect to="/user/p1" />
           </Switch>
         </main>
       </Router>

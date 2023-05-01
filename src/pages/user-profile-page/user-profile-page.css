@@ -1,0 +1,17 @@
+.user-profile_upper-nav-link-container {
+  width: 100%;
+  height: 30px;
+  background-color: lightblue;
+}
+.user-profile_page-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.user-profile_main-container {
+  width: 90vw;
+  height: 80vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+}
