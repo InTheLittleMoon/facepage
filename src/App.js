@@ -29,22 +29,20 @@ export default function App() {
   //all posts/photos/comments must be 'likeable'
 
   return (
-    <div className="app-container">
-      <Router>
-        <main>
-          <Switch>
-            <Route path="/login">
-              {/* all users, regardless of login status, should be brought here */}
-              <EntryPage />
-            </Route>
-            <Route path="/user/:uID">
-              <UserProfilePage />
-            </Route>
-            {/* redirects to entry screen */}
-            <Redirect to="/user/p1" />
-          </Switch>
-        </main>
-      </Router>
-    </div>
+    <Router>
+      <main className="app-container">
+        <Switch>
+          <Route path="/login">
+            {/* all users, regardless of login status, should be brought here */}
+            <EntryPage />
+          </Route>
+          <Route path="/user/:uID">
+            <UserProfilePage />
+          </Route>
+          {/* redirects to entry screen */}
+          <Redirect to="/user/p1" />
+        </Switch>
+      </main>
+    </Router>
   );
 }
