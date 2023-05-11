@@ -79,6 +79,10 @@
   list-style-type: none;
 }
 
+.side-links li:hover {
+  cursor: pointer;
+}
+
 /* right main content section */
 .user-profile_main-container {
   width: 80%;
@@ -86,10 +90,15 @@
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
 }
 
-.user-profile_main-container h1 {
-  width: 100%;
+.user-content-container {
+  display: flex;
+}
+
+.user-infor-bar-container {
+  width: 35%;
 }
 
 /* animations */
@@ -98,13 +107,13 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(3deg);
+    transform: rotate(5deg);
   }
   50% {
     transform: rotate(0deg);
   }
   75% {
-    transform: rotate(-3deg);
+    transform: rotate(-5deg);
   }
   100% {
     transform: rotate(0deg);

@@ -23,8 +23,7 @@ export default function UserProfilePage() {
   };
 
   const searchHandler = () => {
-    console.log("searched");
-    console.log(inputValue);
+    console.log("searched " + inputValue);
     setInputValue("");
   };
 
