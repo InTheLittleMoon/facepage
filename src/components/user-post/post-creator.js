@@ -2,7 +2,7 @@ import React from "react";
 import "./post-creator.css";
 import { useState } from "react";
 
-export default function PostCreator() {
+export default function PostCreator(props) {
   //held states
   const [inputValue, setInputValue] = useState("");
 
@@ -12,6 +12,10 @@ export default function PostCreator() {
   };
 
   const postSubmissionHandler = () => {
+    console.log(props.postsArray);
+    let newfield = { content: inputValue };
+    props.setPostsArray(...props.postsArray, newfield);
+    console.log(props.postsArray);
     console.log("InputValue: " + inputValue);
     setInputValue("");
   };
