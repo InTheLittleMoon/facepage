@@ -14,7 +14,7 @@ export default function PostCreator(props) {
   const postSubmissionHandler = () => {
     console.log(props.postsArray);
     let newfield = { content: inputValue };
-    props.setPostsArray(...props.postsArray, newfield);
+    props.setPostsArray([...props.postsArray, newfield]);
     console.log(props.postsArray);
     console.log("InputValue: " + inputValue);
     setInputValue("");

@@ -8,7 +8,6 @@ import PostsArray from "./post-array";
 export default function Post() {
   const [postsArray, setPostsArray] = useState([
     { content: "Gabe" },
-    { content: "her" },
   ]);
   return (
     <div className="user-posts-container">
