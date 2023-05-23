@@ -6,17 +6,60 @@ export default function PostCreator(props) {
   //held states
   const [inputValue, setInputValue] = useState("");
 
+  //gets current date and time of post
+
+  //figure this out after gym
+  function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? "pm" : "am";
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    var strTime = hours + ":" + minutes + " " + ampm;
+    return strTime;
+  }
+  //figure this out after gym
+
+  console.log(formatAMPM(new Date()));
+
+  const getDate = () => {
+    let dateObject = new Date();
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    let postMonth = monthNames[dateObject.getMonth()];
+    let postDayNum = dateObject.getDate();
+    let postHour = dateObject.getHours();
+    let postMinutes = dateObject.getMinutes();
+
+    return [`${postMonth} ${postDayNum} at ${postHour}:${postMinutes}am`];
+  };
+
+  //deals with text post only currently
   const inputChangeHandler = (event) => {
     setInputValue(event.target.value);
     console.log(inputValue);
   };
 
+  //resets input, gets date of post, and posts into the 'posts array container' below
   const postSubmissionHandler = () => {
-    console.log(props.postsArray);
-    let newfield = { content: inputValue };
+    let dateData = getDate();
+    let newfield = { content: inputValue, date: dateData };
     props.setPostsArray([...props.postsArray, newfield]);
     console.log(props.postsArray);
-    console.log("InputValue: " + inputValue);
     setInputValue("");
   };
 
